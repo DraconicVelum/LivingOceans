@@ -1,4 +1,10 @@
-<h1 align="center"><span style="color:#168bff;">$\LARGE\color{blue}{\textsf{Living Oceans}}$</span></h1>
+<h1 align="center"><span style="color:#168bff;">$\LARGE\color{blue}{\textsf{Living Oceans}}$</span>
+
+<div align="center">
+  <img src="assets/LivingOceans-icon.png" alt="Living Oceans Showcase" width="150">
+</div>
+
+</h1>
 
 <p align="center"><a href="https://ko-fi.com/draconicvelum"> <img src="https://shields.io/badge/kofi-Buy_a_coffee-ff5f5f?logo=ko-fi&amp;type=patrons&amp;style=for-the-badge&amp;color=blue&amp;logoColor=blue" width="189" height="28"></a></p>
 
