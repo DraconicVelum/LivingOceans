@@ -14,7 +14,9 @@
 
 ---
 
-![Showcase](assets/LivingOceans.gif)
+<p align="center">
+  <img src="assets/LivingOceans.gif" alt="Showcase" width="600">
+</p>
 
 ---
 ## <span style="color:#168bff;">$\large\color{blue}{\textsf{How It Works}}$</span>
