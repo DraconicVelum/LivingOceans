@@ -1,0 +1,23 @@
+plugins { id 'java-library'; id 'net.neoforged.moddev' version '2.0.148' }
+group='com.draconicvelum'
+version='0.1.0.0'
+base { archivesName='LivingOceans-neoforge-26.3' }
+java { toolchain.languageVersion=JavaLanguageVersion.of(25); withSourcesJar() }
+repositories { mavenCentral() }
+sourceSets.main {
+    java.srcDir '../fabric/src/main/java'
+    java.srcDir '../fabric/src/client/java'
+    java.exclude 'com/draconicvelum/livingoceans/LivingOceans.java', 'com/draconicvelum/livingoceans/PlatformAttachment.java', '**/ModMenuIntegration.java'
+    resources.srcDir '../fabric/src/main/resources'
+    resources.exclude 'fabric.mod.json'
+}
+neoForge {
+    version='26.3.0.0-beta'
+    mods { livingoceans { sourceSet sourceSets.main } }
+    runs { client { client() }; server { server(); programArgument '--nogui' } }
+}
+processResources {
+    inputs.property 'version',project.version
+    filesMatching('META-INF/neoforge.mods.toml') { expand version:project.version }
+}
+jar { from('../LICENSE') }

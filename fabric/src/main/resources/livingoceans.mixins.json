@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.draconicvelum.livingoceans.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": ["KelpGrowthMixin", "KelpPlacementMixin", "PlayerPlantingMixin"],
+  "injectors": {"defaultRequire": 1}
+}

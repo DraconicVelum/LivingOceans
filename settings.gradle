@@ -1,0 +1,3 @@
+rootProject.name='LivingOceans'
+includeBuild('fabric') { name='fabric' }
+includeBuild('neoforge') { name='neoforge' }

@@ -1,0 +1,82 @@
+{
+  // Enable natural ocean growth on the server.
+  "enabled": true,
+  // Settings for living coral propagation and reef growth.
+  "coral": {
+    // Enable natural propagation for this species.
+    "enabled": true,
+    // Chance per eligible growth attempt, from 0 to 1. This is not a chance per server tick.
+    "growthChance": 0.02,
+    // Local crowding limit in a 3-by-3 neighborhood, greater than 0 and at most 1.
+    "maxDensity": 0.65,
+    // Maximum horizontal distance from the inherited colony origin, in blocks (1-24). Descendants keep the same origin.
+    "maxColonyRadius": 7,
+    // Species occupancy limit per 16-by-16 habitat area, greater than 0 and at most 1. Existing excess vegetation is not removed.
+    "maxAreaDensity": 0.2
+  },
+  // Settings for seagrass propagation. New plants have an equal chance of being short or tall.
+  "seagrass": {
+    // Enable natural propagation for this species.
+    "enabled": true,
+    // Chance per eligible growth attempt, from 0 to 1. This is not a chance per server tick.
+    "growthChance": 0.04,
+    // Local crowding limit in a 3-by-3 neighborhood, greater than 0 and at most 1.
+    "maxDensity": 0.7,
+    // Maximum horizontal distance from the inherited colony origin, in blocks (1-24). Descendants keep the same origin.
+    "maxColonyRadius": 15,
+    // Species occupancy limit per 16-by-16 habitat area, greater than 0 and at most 1. Existing excess vegetation is not removed.
+    "maxAreaDensity": 0.32
+  },
+  // Settings for horizontal kelp propagation. Vanilla controls vertical growth within the height policy.
+  "kelp": {
+    // Enable natural propagation for this species.
+    "enabled": true,
+    // Chance per eligible growth attempt, from 0 to 1. This is not a chance per server tick.
+    "growthChance": 0.02,
+    // Local crowding limit in a 3-by-3 neighborhood, greater than 0 and at most 1.
+    "maxDensity": 0.45,
+    // Maximum horizontal distance from the inherited colony origin, in blocks (1-24). Descendants keep the same origin.
+    "maxColonyRadius": 15,
+    // Species occupancy limit per 16-by-16 habitat area, greater than 0 and at most 1. Existing excess vegetation is not removed.
+    "maxAreaDensity": 0.16
+  },
+  // Shared server-wide ecology work budget per tick (1-4096). A low budget can delay chunk cycles.
+  "maxOperationsPerTick": 32,
+  // Growth sampling attempts per eligible chunk cycle (1-4).
+  "attemptsPerChunk": 1,
+  // Requested interval between each chunk's cycles (1-72000 ticks). Budget pressure can delay a cycle; no offline catch-up occurs.
+  "intervalTicks": 1,
+  // Maximum horizontal distance of one propagation step, in blocks (1-4).
+  "maxDistance": 3,
+  // Maximum chunk distance from each player (0-32), limited by actual view distance, simulation distance and loaded ticking chunks.
+  "playerChunkRadius": 8,
+  // Minimum brightness at a growth destination (0-15).
+  "minimumLight": 0,
+  // Allow mature coral habitats to build solid reefs gradually using vanilla-generated plans.
+  "reefGrowthEnabled": true,
+  // Fraction of the configured coral habitat capacity required before reef construction starts (0-1).
+  "reefMaturityThreshold": 0.75,
+  // Maximum seabed rise or descent between consecutive path samples, in blocks (0-4).
+  "maxTerrainStep": 1,
+  // Random natural kelp height limits. Existing taller kelp is never trimmed.
+  "kelpHeights": {
+    // Assign persistent random height ceilings to natural kelp and its descendants.
+    "enabled": true,
+    // Minimum random kelp height ceiling, in blocks (1-384), limited by available water.
+    "minimumHeight": 3,
+    // Maximum random kelp height ceiling, in blocks (0-384). Zero uses the available ocean height; otherwise must be at least minimumHeight.
+    "maximumHeight": 0,
+    // Maximum new kelp height ceilings initialized per server tick (1-64).
+    "maxInitializationsPerTick": 2,
+    // Allow bonemeal to grow kelp beyond its natural height ceiling.
+    "bonemealBypassesLimit": true,
+    // Allow players to stack kelp above its natural height ceiling. Vanilla placement rules still apply.
+    "playerStackingBypassesLimit": true
+  },
+  // Maximum ecology work budget for one chunk cycle (1-4096), also limited by the shared budget.
+  "maxOperationsPerChunk": 32,
+  // Holding Shift while planting starts a new colony, even inside another colony's radius.
+  "shiftPlantingStartsNewColony": true,
+  // Allow reef growth in other eligible ocean biomes. When false, the reefs_allowed biome tag restricts growth, normally to warm ocean.
+  "allowReefsOutsideWarmOcean": true
+}

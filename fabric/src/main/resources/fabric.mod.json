@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "livingoceans",
+  "version": "${version}",
+  "name": "Living Oceans",
+  "description": "Living corals, seagrass and kelp that spread naturally and form thriving vanilla oceans.",
+  "authors": ["DraconicVelum"],
+  "license": "GPL-3.0-only",
+  "icon": "assets/livingoceans/icon.png",
+  "environment": "*",
+  "mixins": ["livingoceans.mixins.json"],
+  "entrypoints": {"main": ["com.draconicvelum.livingoceans.LivingOceans"], "modmenu": ["com.draconicvelum.livingoceans.client.ModMenuIntegration"]},
+  "suggests": {"modmenu": ">=21.0.0"},
+  "depends": {"fabricloader": ">=0.19.3", "minecraft": "26.3", "java": ">=25", "fabric-api": ">=0.160.5+26.3"}
+}

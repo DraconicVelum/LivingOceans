@@ -1,0 +1,19 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.18.2' }
+group = 'com.draconicvelum'
+version = '0.1.0.0'
+base { archivesName = 'LivingOceans-fabric-26.3' }
+repositories { mavenCentral(); maven { url='https://maven.terraformersmc.com/releases/' } }
+dependencies {
+    minecraft 'com.mojang:minecraft:26.3'
+    implementation 'net.fabricmc:fabric-loader:0.19.3'
+    implementation 'net.fabricmc.fabric-api:fabric-api:0.160.5+26.3'
+    compileOnly('com.terraformersmc:modmenu:21.0.0') { exclude group:'net.fabricmc',module:'fabric-loader' }
+}
+java { toolchain.languageVersion = JavaLanguageVersion.of(25); withSourcesJar() }
+sourceSets.main.java.srcDir 'src/client/java'
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+jar { from('../LICENSE') }
+loom { mods { livingoceans { sourceSet sourceSets.main } } }

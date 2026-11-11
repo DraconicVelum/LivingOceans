@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="GPL-3.0-only"
+[[mods]]
+modId="livingoceans"
+version="${version}"
+displayName="Living Oceans"
+iconFile="assets/livingoceans/icon.png"
+logoFile="assets/livingoceans/icon.png"
+authors="DraconicVelum"
+description='''Living corals, seagrass and kelp that spread naturally and form thriving vanilla oceans.'''
+[[mixins]]
+config="livingoceans.mixins.json"
+[[dependencies.livingoceans]]
+modId="neoforge"
+type="required"
+versionRange="[26.3.0.0-beta,26.4)"
+side="BOTH"
+[[dependencies.livingoceans]]
+modId="minecraft"
+type="required"
+versionRange="[26.3,26.4)"
+side="BOTH"

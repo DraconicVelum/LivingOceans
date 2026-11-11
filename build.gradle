@@ -1,0 +1,6 @@
+plugins { id 'base' }
+version='0.1.0.0'
+tasks.register('buildFabric') { dependsOn gradle.includedBuild('fabric').task(':build') }
+tasks.register('buildNeoForge') { dependsOn gradle.includedBuild('neoforge').task(':build') }
+tasks.named('build') { dependsOn 'buildFabric','buildNeoForge' }
+tasks.register('buildAll') { dependsOn build }
